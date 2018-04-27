@@ -18,7 +18,7 @@ public class UserDAOImpl implements UserDAO {
     private static final String ADD_USER = "INSERT INTO `user`(login, mail, first_name, last_name, middle_name, password)" +
             " VALUES(?, ?, ?, ?, ?, ?)";
     private static final String UPDATE_USER = "UPDATE `user` SET login = ?, mail = ?, first_name = ?, last_name = ?, middle_name = ?, password = ? WHERE id = ?";
-    private static final String REMOVE_USER = "REMOVE `FROM` user WHERE id = ?";
+    private static final String REMOVE_USER = "DELETE FROM `user` WHERE id = ?";
     private static final String GET_BY_FULL_NAME = "SELECT * FROM user WHERE concat(first_name, last_name, middle_name)=?";
     private static final String GET_ALL = "SELECT * FROM `user`";
     private static final String COUNT = "SELECT count(*) FROM `user`";

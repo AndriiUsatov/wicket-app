@@ -1,24 +1,22 @@
 package com.andrii.app.page.home;
 
-import org.apache.wicket.Application;
-import org.apache.wicket.authroles.authentication.AuthenticatedWebApplication;
-import org.apache.wicket.authroles.authentication.AuthenticatedWebSession;
+import com.andrii.app.form.LoginForm;
+import org.apache.wicket.authroles.authentication.pages.SignInPage;
+import org.apache.wicket.authroles.authentication.panel.SignInPanel;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.WebPage;
 
 public class HomePage extends WebPage {
 
-    @Override
-    protected void onConfigure() {
-        super.onConfigure();
-
-        AuthenticatedWebApplication app = (AuthenticatedWebApplication) Application.get();
-        if (!AuthenticatedWebSession.get().isSignedIn()) {
-            app.restartResponseAtSignInPage();
-        }
+	public HomePage(final PageParameters parameters) {
+		super(parameters);
     }
 
-    @Override
-    protected void onInitialize() {
-        super.onInitialize();
-    }
+	@Override
+	protected void onInitialize() {
+		super.onInitialize();
+		add(new LoginForm("loginForm"));
+	}
+
 }

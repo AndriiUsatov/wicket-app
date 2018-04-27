@@ -9,6 +9,22 @@ import java.util.List;
 public class UserService {
 
     private UserDAO userDAO = new UserDAOImpl();
+    private static UserService userServiceInstance;
+
+    private UserService(){
+
+    }
+
+    public static UserService getUserServiceInstance(){
+        if(userServiceInstance == null){
+            synchronized (UserService.class){
+                if(userServiceInstance == null){
+                    userServiceInstance = new UserService();
+                }
+            }
+        }
+        return userServiceInstance;
+    }
 
 
     public void addUser(User user) {
@@ -38,4 +54,6 @@ public class UserService {
     public Boolean userLoginExists(String login) {
         return userDAO.findByLogin(login) != null;
     }
+
+    public User getUserByLogin(String login){ return userDAO.findByLogin(login); }
 }

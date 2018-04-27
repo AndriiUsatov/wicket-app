@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:wicket="http://wicket.apache.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8"/>
+    <title>Apache Wicket Quickstart</title>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold' rel='stylesheet'
+          type='text/css'/>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet"/>
 </head>
 <body>
-
+<form wicket:id="loginForm">
+    <table>
+        <tr>
+            <td><label wicket:id="loginLabel" for="login"/></td>
+            <td><input type="text" id="login" wicket:id="login"/></td>
+        </tr>
+        <tr>
+            <td><label wicket:id="passwordLabel" for="password"/></td>
+            <td><input type="password" id="password" wicket:id="password"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" wicket:id="submit"></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
