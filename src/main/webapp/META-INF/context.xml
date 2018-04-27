@@ -1,0 +1,13 @@
+<Context>
+    <Resource name="jdbc/wicket_crud"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxTotal="100"
+              maxIdle="30"
+              maxWaitMillis="1000"
+              username="root"
+              password="152758"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/wicket_crud?useUnicode=true&amp;characterEncoding=utf8"/>
+</Context>
+
