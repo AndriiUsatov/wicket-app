@@ -23,6 +23,7 @@ public class UserDAOImpl implements UserDAO {
     private static final String GET_ALL = "SELECT * FROM `user`";
     private static final String COUNT = "SELECT count(*) FROM `user`";
     private static final String GET_BY_LOGIN = "SELECT * FROM `user` WHERE login=?";
+    private static final String GET_BY_ID = "SELECT * FROM `user` WHERE id=?";
 
     @Override
     public void add(User user) {
@@ -123,19 +124,32 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User findByLogin(String login) {
-        User result = null;
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(GET_BY_LOGIN)){
                 preparedStatement.setString(1, login);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 resultSet.next();
-                result = UserMapper.map(resultSet);
+                return UserMapper.map(resultSet);
         } catch (SQLException e) {
             logger.error(e);
             e.printStackTrace();
             throw new DAOException(e);
         }
-        return result;
+    }
+
+    @Override
+    public User findByID(Long id) {
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(GET_BY_ID)){
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return UserMapper.map(resultSet);
+        } catch (SQLException e) {
+            logger.error(e);
+            e.printStackTrace();
+            throw new DAOException(e);
+        }
     }
 
     private static Connection getConnection() {

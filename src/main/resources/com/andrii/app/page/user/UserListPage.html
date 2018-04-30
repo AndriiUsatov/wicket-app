@@ -6,19 +6,35 @@
 </head>
 <body>
 <h1 wicket:id="helloMessage"></h1>
-<a wicket:id="addUser">Add new user</a>
+<button type="button" wicket:id="addUser">Add new user</button>
+<form wicket:id="searchUserForm">
+    <table>
+        <tr><input type="text" wicket:id="searchUserFirstName" placeholder="Enter first name"/></tr>
+        <tr><input type="text" wicket:id="searchUserLastName" placeholder="Enter last name"/></tr>
+        <tr><input type="text" wicket:id="searchUserMiddleName" placeholder="Enter middle name"/></tr>
+        <tr><input type="submit" value="Find"/></tr>
+    </table>
+</form>
 <table>
+    <tr>
+        <th>Login</th>
+        <th>Password</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Middle Name</th>
+        <th>Mail</th>
+    </tr>
     <tr wicket:id="listUser">
         <td wicket:id="login">LOGIN</td>
-        <!--<td wicket:id="password">PASSWORD</td>-->
+        <td wicket:id="password">PASSWORD</td>
         <td wicket:id="firstName">FIRST NAME</td>
         <td wicket:id="lastName">LAST NAME</td>
         <td wicket:id="middleName">MIDDLE NAME</td>
         <td wicket:id="mail">MAIL</td>
-        <td wicket:id="editButton">Edit</td>
-        <td wicket:id="removeButton">Remove</td>
+        <td><button type="button" wicket:id="editButton">Edit</button></td>
+        <td><button type="button" wicket:id="removeButton">Remove</button></td>
     </tr>
 </table>
-<a wicket:id="logout">Logout</a>
+<button type="button" wicket:id="logout">Logout</button>
 </body>
 </html>

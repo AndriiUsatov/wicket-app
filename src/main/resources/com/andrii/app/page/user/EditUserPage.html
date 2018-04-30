@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+<form wicket:id="editUserForm">
+    <table>
+        <tr>
+            <th>Login</th>
+            <td><input wicket:id="loginEdit" type="text"/></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><input wicket:id="passwordEdit" type="text"/></td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <td><input wicket:id="firstNameEdit" type="text"/></td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td><input wicket:id="lastNameEdit" type="text"/></td>
+        </tr>
+        <tr>
+            <th>Middle Name</th>
+            <td><input wicket:id="middleNameEdit" type="text"/></td>
+        </tr>
+        <tr>
+            <th>Mail</th>
+            <td><input wicket:id="mailEdit" type="text"/></td>
+        </tr>
+        <tr>
+            <td>
+                <button wicket:id="updateUser">Edit user</button>
+            </td>
+            <td>
+                <button wicket:id="toList">Back to list</button>
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>

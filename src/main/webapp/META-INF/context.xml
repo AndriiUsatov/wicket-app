@@ -8,6 +8,6 @@
               username="root"
               password="152758"
               driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/wicket_crud?useUnicode=true&amp;characterEncoding=utf8"/>
+              url="jdbc:mysql://localhost:3306/wicket_crud?useUnicode=true&amp;characterEncoding=utf8&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
 </Context>
 

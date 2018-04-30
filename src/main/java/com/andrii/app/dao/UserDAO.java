@@ -19,4 +19,6 @@ public interface UserDAO {
     Long getCount();
 
     User findByLogin(String login);
+
+    User findByID(Long id);
 }

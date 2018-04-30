@@ -56,4 +56,8 @@ public class UserService {
     }
 
     public User getUserByLogin(String login){ return userDAO.findByLogin(login); }
+
+    public User getUserByID(Long id){
+        return userDAO.findByID(id);
+    }
 }
