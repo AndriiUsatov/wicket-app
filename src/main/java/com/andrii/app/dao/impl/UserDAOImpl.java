@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO {
 
     public UserDAOImpl(){
         try {
-            queries.load(getClass().getResourceAsStream("/queries.properies"));
+            queries.load(getClass().getResourceAsStream("/queries.properties"));
         } catch (IOException e) {
             logger.error(e);
             e.printStackTrace();
