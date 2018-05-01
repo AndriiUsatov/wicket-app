@@ -4,7 +4,6 @@ import com.andrii.app.page.home.HomePage;
 import com.andrii.app.page.user.AddUserPage;
 import com.andrii.app.page.user.EditUserPage;
 import com.andrii.app.page.user.UserListPage;
-import com.andrii.app.util.AppExceptionMapper;
 import com.andrii.app.util.AppIProvider;
 import com.andrii.app.util.AuthorizationStrategy;
 import com.andrii.app.util.SignInSession;

@@ -13,7 +13,6 @@ public class AuthorizationStrategy extends IAuthorizationStrategy.AllowAllAuthor
     public <T extends IRequestableComponent> boolean isInstantiationAuthorized(Class<T> c) {
             SignInSession session = (SignInSession) Session.get();
             if(AuthenticatedWebPage.class.isAssignableFrom(c)){
-//                return session.get().isSignedIn();
                 if(session.isSignedIn()){
                     return true;
                 }

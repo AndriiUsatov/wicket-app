@@ -25,7 +25,7 @@ public class AddUserForm extends Form {
         add(new PasswordTextField("passwordSetField", Model.of("")));
         add(new TextField("mailSetField", Model.of("")));
         add(new SubmitLink("createUser", Model.of("")));
-        add(new Button("toList", Model.of("")){
+        add(new Button("toList", Model.of("")) {
             @Override
             public void onSubmit() {
                 setResponsePage(UserListPage.class);

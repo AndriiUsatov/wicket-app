@@ -1,20 +1,12 @@
 package com.andrii.app.form;
 
-import com.andrii.app.domain.User;
 import com.andrii.app.page.user.UserListPage;
-import com.andrii.app.service.UserService;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
-import org.apache.wicket.request.component.IRequestablePage;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import java.util.List;
-
 public class SearchUserForm extends Form {
-
-    private static UserService userService = UserService.getUserServiceInstance();
-    private List<User> foundUsers;
 
     public SearchUserForm(String id) {
         super(id);
@@ -45,8 +37,5 @@ public class SearchUserForm extends Form {
         }
     }
 
-    public List<User> getFoundUsers() {
-        return foundUsers;
-    }
 }
 
