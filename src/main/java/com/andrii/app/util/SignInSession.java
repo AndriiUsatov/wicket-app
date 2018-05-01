@@ -17,21 +17,25 @@ public class SignInSession extends AuthenticatedWebSession {
 
     @Override
     protected boolean authenticate(String login, String password) {
-        if(user == null || login != null && password != null){
-            User tmp = userService.getUserByLogin(login);
-            User input = User.builder()
-                    .login(login)
-                    .password(password)
-                    .build();
-            if(tmp.equals(input)){
-                user = tmp;
-                return true;
+        try {
+            User byLogin = userService.getUserByLogin(login);
+            if (user == null && login != null && password != null) {
+                User input = User.builder()
+                        .login(login)
+                        .password(password)
+                        .build();
+                if (byLogin.equals(input)) {
+                    user = byLogin;
+                    return true;
+                }
             }
+            return user.equals(byLogin);
+        } catch (Exception e) {
+            return false;
         }
-        return user.equals(userService.getUserByLogin(login));
     }
 
-    public User getUser(){
+    public User getUser() {
         return user;
     }
 
